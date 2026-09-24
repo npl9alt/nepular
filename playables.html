@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Google</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="playables">
+
+  <div class="content-root">
+
+    <header class="topbar">
+
+      <a class="logo" href="study.html">
+        NEPULAR HUB <span>.</span>
+      </a>
+
+      <div class="header-center">
+
+        <nav class="nav" id="nav">
+          <a href="sites.html" class="nav-button">Sites</a>
+          <a href="playables.html" class="nav-button active">Playables</a>
+        </nav>
+
+        <div class="clock-widget" id="clock"></div>
+
+      </div>
+
+      <button
+        class="settings-btn"
+        type="button"
+        onclick="toggleSettings()"
+      >
+        ⚙️
+      </button>
+
+    </header>
+
+
+    <main id="playables" class="page active">
+
+      <div class="hero">
+
+        <div class="small-title">
+          PLAYABLES
+        </div>
+
+        <h1>
+          PLAY <span>OFFLINE.</span>
+        </h1>
+
+        <p>
+          Play games offline directly from Nepular Hub
+        </p>
+
+      </div>
+
+
+      <div class="playables-wrapper">
+
+        <div class="games-title">
+          <span>Playables</span>
+        </div>
+
+
+        <div class="playables-grid" id="playables-grid">
+
+          <!--
+            PLAYABLE TEMPLATE
+
+            name: Game Name
+            image: Image URL
+            url: game.html
+
+            Copy the block below to add another game.
+          -->
+
+
+          <!-- Retro Bowl -->
+          <a
+            class="playable-card"
+            href="playables/retrobowl.html"
+          >
+            <div class="playable-image">
+              <img
+                src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=314,height=314,fit=cover,f=auto/ee9ca3764ef4289a48a1ebf457ef605441ed1f35a0f2eb12707a70d609e53686/retro-bowl-logo.png"
+                alt="Retro Bowl"
+              >
+            </div>
+            <div class="playable-info">
+
+              <div class="playable-name">
+                Retro Bowl
+              </div>
+            </div>
+
+          </a>
+
+          <!-- GRANNY -->
+          <a class="playable-card" href="playables/granny.html">
+
+            <div class="playable-image">
+              <img src="https://play-lh.googleusercontent.com/P8BbkQ6m0eCYYAx2tXTESBiIDQ2RESsSQp6oD8ZAP35rmEjmaXHMboYT6P807sAnfcuskKTdYbTyH5R0GCFk8Q" alt="Granny">
+            </div>
+
+            <div class="playable-info">
+              <div class="playable-name">Granny</div>
+            </div>
+
+          </a>
+
+          <a class="playable-card" href="playables/kartbros.html">
+
+            <div class="playable-image">
+              <img src="https://eggycargame.cc/uploads/games/main/img_69ae057947f38.jpg">
+            </div>
+
+            <div class="playable-info">
+              <div class="playable-name">Kart Bros</div>
+            </div>
+
+          </a>
+
+          <a class="playable-card" href="playables/minecraft.html">
+
+            <div class="playable-image">
+              <img src="https://avatars.githubusercontent.com/u/136807160?s=280&v=4" alt="Eaglercraft">
+            </div>
+
+            <div class="playable-info">
+              <div class="playable-name">Game Name</div>
+            </div>
+
+          </a>
+
+          <a class="playable-card" href="playables/ragdoll.html">
+
+            <div class="playable-image">
+              <img src="https://play-lh.googleusercontent.com/15zkozUZzNZXG2Hx_FdE0S9paEUGP6ufaKr_VXDK6Tl2ytLDjA7967wb561g1B39oqp30loRsHFQpIKjbO3l-A" alt="Ragdoll Archers">
+            </div>
+
+            <div class="playable-info">
+              <div class="playable-name">Ragdoll Archers</div>
+            </div>
+
+          </a>
+
+          <a class="playable-card" href="playables/escape.html">
+
+            <div class="playable-image">
+              <img src="https://imgs.crazygames.com/escape-road-asm_16x9/20250724105031/escape-road-asm_16x9-cover?metadata=none&quality=60&height=4373" alt="Escape Car">
+            </div>
+
+            <div class="playable-info">
+              <div class="playable-name">Escape Car</div>
+            </div>
+
+          </a>
+          <!--
+          EXAMPLE FOR ANOTHER GAME:
+          <a class="playable-card" href="playables/game.html">
+
+            <div class="playable-image">
+              <img src="IMAGE_URL" alt="Game Name">
+            </div>
+
+            <div class="playable-info">
+              <div class="playable-name">Game Name</div>
+            </div>
+
+          </a>
+          -->
+
+        </div>
+        <div
+          class="playables-pagination"
+          id="playables-pagination"
+        ></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- SETTINGS -->
+
+  <div
+    class="settings-overlay"
+    id="settingsOverlay"
+    onclick="closeSettings(event)"
+  >
+    <div
+      class="settings-panel"
+      onclick="event.stopPropagation()"
+    >
+      <button
+        class="close-settings"
+        type="button"
+        onclick="toggleSettings()"
+      >
+        ✕
+      </button>
+      <div class="settings-title">
+        SETTINGS
+      </div>
+      <div class="settings-group">
+        <div class="settings-label">
+          UI Themes
+        </div>
+
+        <div id="themeSelector"></div>
+
+      </div>
+
+
+      <div class="settings-group">
+
+        <div class="settings-label">
+          Accent Color
+        </div>
+
+        <div
+          class="color-picker-grid"
+          id="accentPicker"
+        ></div>
+
+      </div>
+
+
+      <div class="settings-group">
+
+        <div class="settings-label">
+          Font
+        </div>
+
+        <select
+          class="font-select"
+          id="fontSelect"
+        >
+
+          <option value="'Arial', Helvetica, sans-serif">
+            Arial
+          </option>
+
+          <option value="'Courier New', monospace">
+            Courier New
+          </option>
+
+          <option value="'Georgia', serif">
+            Georgia
+          </option>
+
+          <option value="'Trebuchet MS', sans-serif">
+            Trebuchet MS
+          </option>
+
+          <option value="'Comic Sans MS', sans-serif">
+            Comic Sans MS
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="settings-group">
+
+        <div class="settings-label">
+          Cursor Style
+        </div>
+
+        <div id="cursorSelector"></div>
+
+      </div>
+
+
+      <div class="settings-group">
+
+        <div class="settings-label">
+          Options
+        </div>
+
+
+        <div class="settings-option">
+
+          <span>
+            Blur Effect
+          </span>
+
+          <button
+            class="settings-toggle active"
+            id="blurToggle"
+            type="button"
+            onclick="toggleSetting('blur')"
+          ></button>
+
+        </div>
+
+
+        <div class="settings-option">
+
+          <span>
+            Compact Mode
+          </span>
+
+          <button
+            class="settings-toggle"
+            id="compactToggle"
+            type="button"
+            onclick="toggleSetting('compact')"
+          ></button>
+
+        </div>
+
+
+        <div class="settings-option">
+
+          <span>
+            Clock Widget
+          </span>
+
+          <button
+            class="settings-toggle active"
+            id="clockToggle"
+            type="button"
+            onclick="toggleSetting('clock')"
+          ></button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>

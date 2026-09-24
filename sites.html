@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="sites">
+
+  <div class="content-root">
+    <header class="topbar">
+      <a class="logo" href="study.html">NEPULAR HUB <span>.</span></a>
+      <div class="header-center">
+        <nav class="nav" id="nav">
+          <a href="sites.html" class="nav-button active">Sites</a>
+          <a href="playables.html" class="nav-button">Playables</a>
+        </nav>
+        <div class="clock-widget" id="clock"></div>
+      </div>
+      <button class="settings-btn" type="button" onclick="toggleSettings()">⚙️</button>
+    </header>
+
+    <main id="sites" class="page active">
+      <div class="sites-wrapper">
+        <div class="sites-title"><span>Sites</span></div>
+        <div class="sites-grid" id="sites-grid"></div>
+      </div>
+    </main>
+
+    <div id="app-pages"></div>
+  </div>
+
+  <div class="settings-overlay" id="settingsOverlay" onclick="closeSettings(event)">
+    <div class="settings-panel" onclick="event.stopPropagation()">
+      <button class="close-settings" type="button" onclick="toggleSettings()">✕</button>
+      <div class="settings-title">SETTINGS</div>
+      <div class="settings-group">
+        <div class="settings-label">UI Themes</div>
+        <div id="themeSelector"></div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-label">Accent Color</div>
+        <div class="color-picker-grid" id="accentPicker"></div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-label">Font</div>
+        <select class="font-select" id="fontSelect">
+          <option value="'Arial', Helvetica, sans-serif">Arial</option>
+          <option value="'Courier New', monospace">Courier New</option>
+          <option value="'Georgia', serif">Georgia</option>
+          <option value="'Trebuchet MS', sans-serif">Trebuchet MS</option>
+          <option value="'Comic Sans MS', sans-serif">Comic Sans MS</option>
+        </select>
+      </div>
+      <div class="settings-group">
+        <div class="settings-label">Cursor Style</div>
+        <div id="cursorSelector"></div>
+      </div>
+      <div class="settings-group">
+        <div class="settings-label">Options</div>
+        <div class="settings-option">
+          <span>Blur Effect</span>
+          <button class="settings-toggle active" id="blurToggle" type="button" onclick="toggleSetting('blur')"></button>
+        </div>
+        <div class="settings-option">
+          <span>Compact Mode</span>
+          <button class="settings-toggle" id="compactToggle" type="button" onclick="toggleSetting('compact')"></button>
+        </div>
+        <div class="settings-option">
+          <span>Clock Widget</span>
+          <button class="settings-toggle active" id="clockToggle" type="button" onclick="toggleSetting('clock')"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
